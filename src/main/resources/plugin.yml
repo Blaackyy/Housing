@@ -4,3 +4,5 @@ main: dev.blacky.housing.Housing
 api-version: 1.19
 authors: [Blacky]
 description: Housing system
+depend:
+  - RealisticSeasons
