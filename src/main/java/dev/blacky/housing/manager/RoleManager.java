@@ -21,12 +21,11 @@ public final class RoleManager {
         this.addRoleCapability(HouseRole.BOSS, "member.add");
         this.addRoleCapability(HouseRole.BOSS, "member.promote");
         this.addRoleCapability(HouseRole.BOSS, "member.demote");
+        this.addRoleCapability(HouseRole.BOSS, "member.invite");
 
         this.addRoleCapability(HouseRole.SUB_BOSS, "member.delete");
         this.addRoleCapability(HouseRole.SUB_BOSS, "member.promote");
-        this.addRoleCapability(HouseRole.SUB_BOSS, "member.demote");
-
-        this.addRoleCapability(HouseRole.MEMBER, "member.invite");
+        this.addRoleCapability(HouseRole.SUB_BOSS, "member.invite");
     }
 
     public void addRoleCapability(HouseRole role, String capability) {
