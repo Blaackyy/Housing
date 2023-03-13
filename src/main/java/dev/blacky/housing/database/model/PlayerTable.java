@@ -1,6 +1,7 @@
 package dev.blacky.housing.database.model;
 
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.misc.BaseDaoEnabled;
 import com.j256.ormlite.table.DatabaseTable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-public final class PlayerTable {
+public final class PlayerTable extends BaseDaoEnabled<PlayerTable, UUID> {
     @DatabaseField(id = true)
     private UUID playerId;
     @DatabaseField
