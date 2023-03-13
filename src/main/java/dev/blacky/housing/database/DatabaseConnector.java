@@ -1,7 +1,6 @@
 package dev.blacky.housing.database;
 
-import com.j256.ormlite.jdbc.JdbcConnectionSource;
-import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import dev.blacky.housing.database.model.HouseTable;
 import dev.blacky.housing.database.model.PlayerTable;
@@ -13,10 +12,13 @@ import java.sql.SQLException;
 
 public final class DatabaseConnector {
     @Getter
-    private static ConnectionSource connectionSource;
+    private static JdbcPooledConnectionSource connectionSource;
 
     public DatabaseConnector() throws SQLException {
-        connectionSource = new JdbcConnectionSource(Config.DB_URL);
+        connectionSource = new JdbcPooledConnectionSource(Config.DB_URL);
+        connectionSource.setCheckConnectionsEveryMillis(60 * 1000);
+        connectionSource.setMaxConnectionAgeMillis(5 * 60 * 1000);
+
         this.init();
     }
 

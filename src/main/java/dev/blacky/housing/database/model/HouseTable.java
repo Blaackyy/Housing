@@ -17,7 +17,7 @@ import java.util.UUID;
 public final class HouseTable {
     @DatabaseField(id = true)
     private UUID houseId;
-    @DatabaseField
+    @DatabaseField(index = true)
     private String houseName;
     @DatabaseField
     private String houseData;
