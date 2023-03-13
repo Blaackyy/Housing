@@ -1,5 +1,6 @@
 package dev.blacky.housing.util;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -42,5 +43,17 @@ public final class ChatUtils {
 
     public static void sendWarning(CommandSender sender, String message) {
         sender.sendMessage(formatWarning(message));
+    }
+
+    public static void logInfo(String message) {
+        Bukkit.getConsoleSender().sendMessage(formatInfo(message));
+    }
+
+    public static void logSuccess(String message) {
+        Bukkit.getConsoleSender().sendMessage(formatSuccess(message));
+    }
+
+    public static void logError(String message) {
+        Bukkit.getConsoleSender().sendMessage(formatError(message));
     }
 }
