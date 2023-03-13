@@ -1,5 +1,6 @@
 package dev.blacky.housing;
 
+import dev.blacky.housing.command.CommandProcessor;
 import dev.blacky.housing.manager.HouseManager;
 import dev.blacky.housing.manager.PlayerManager;
 import dev.blacky.housing.manager.RoleManager;
@@ -19,6 +20,8 @@ public final class Housing extends JavaPlugin {
         this.houseManager = new HouseManager(this);
         this.roleManager = new RoleManager(this);
         this.playerManager = new PlayerManager(this);
+
+        getServer().getCommandMap().register("housing", new CommandProcessor(this));
     }
 
     @Override
