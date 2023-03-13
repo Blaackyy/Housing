@@ -3,6 +3,8 @@ version: '${project.version}'
 main: dev.blacky.housing.Housing
 api-version: 1.19
 authors: [Blacky]
+libraries:
+  - com.j256.ormlite:ormlite-jdbc:6.1
 description: Housing system
 depend:
   - RealisticSeasons
